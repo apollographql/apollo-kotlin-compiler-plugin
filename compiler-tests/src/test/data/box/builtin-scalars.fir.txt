@@ -1,0 +1,59 @@
+FILE: builtin-scalars.kt
+    @R|apollo/kotlin/Query|(document = String(
+{
+  int
+  boolean
+  string
+  float
+}
+)) public final class GetFooQuery : R|kotlin/Any|, R|apollo/kotlin/Executable<GetFooQuery.Data>| {
+        public constructor(): R|GetFooQuery| {
+            super<R|kotlin/Any|>()
+        }
+
+        public final fun compiledDocument(): R|apollo/kotlin/CompiledDocument|
+
+        public final fun variables(): R|kotlin/collections/Map<kotlin/String, kotlin/Any?>|
+
+        public final fun dataAdapter(): R|apollo/kotlin/Adapter<GetFooQuery.Data>|
+
+        public final class Data : R|kotlin/Any| {
+            public final val int: R|kotlin/Int?|
+                public get(): R|kotlin/Int?|
+
+            public final val boolean: R|kotlin/Boolean?|
+                public get(): R|kotlin/Boolean?|
+
+            public final val string: R|kotlin/String?|
+                public get(): R|kotlin/String?|
+
+            public final val float: R|kotlin/Double?|
+                public get(): R|kotlin/Double?|
+
+            public constructor(int: R|kotlin/Int?|, boolean: R|kotlin/Boolean?|, string: R|kotlin/String?|, float: R|kotlin/Double?|): R|GetFooQuery.Data|
+
+            public final object Adapter : R|apollo/kotlin/Adapter<GetFooQuery.Data>| {
+                public final fun fromJson(element: R|apollo/kotlin/JsonElement|): R|GetFooQuery.Data|
+
+                public final fun toJson(value: R|GetFooQuery.Data|): R|apollo/kotlin/JsonElement|
+
+                public constructor(): R|GetFooQuery.Data.Adapter|
+
+            }
+
+        }
+
+        public final companion object Companion : R|kotlin/Any| {
+            public final val compiledDocument: R|apollo/kotlin/CompiledDocument|
+                public get(): R|apollo/kotlin/CompiledDocument|
+
+            public constructor(): R|GetFooQuery.Companion|
+
+        }
+
+    }
+    public final fun box(): R|kotlin/String| {
+        Q|GetFooQuery|.R|/GetFooQuery.Data|(Int(4), Boolean(true), String(foo), Double(2.0))
+        Q|GetFooQuery|.R|/GetFooQuery.Data|(Null(null), Null(null), Null(null), Null(null))
+        ^box String(OK)
+    }

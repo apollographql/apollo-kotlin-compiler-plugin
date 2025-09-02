@@ -1,0 +1,82 @@
+FILE: a.kt
+    @R|apollo/kotlin/Query|(document = String({...queryDetails})) public final class GetFooQuery : R|kotlin/Any|, R|apollo/kotlin/compat/QueryCompat<GetFooQuery.Data>| {
+        public constructor(): R|GetFooQuery| {
+            super<R|kotlin/Any|>()
+        }
+
+        public final fun compiledDocument(): R|apollo/kotlin/CompiledDocument|
+
+        public final fun variables(): R|kotlin/collections/Map<kotlin/String, kotlin/Any?>|
+
+        public final fun dataAdapter(): R|apollo/kotlin/Adapter<GetFooQuery.Data>|
+
+        public final class Data : R|apollo/kotlin/compat/QueryCompat.Data| {
+            public final val queryDetails: R|QueryDetails.Data?|
+                public get(): R|QueryDetails.Data?|
+
+            public constructor(queryDetails: R|QueryDetails.Data?|): R|GetFooQuery.Data|
+
+            public final object Adapter : R|apollo/kotlin/Adapter<GetFooQuery.Data>| {
+                public final fun fromJson(element: R|apollo/kotlin/JsonElement|): R|GetFooQuery.Data|
+
+                public final fun toJson(value: R|GetFooQuery.Data|): R|apollo/kotlin/JsonElement|
+
+                public constructor(): R|GetFooQuery.Data.Adapter|
+
+            }
+
+        }
+
+        public final companion object Companion : R|kotlin/Any| {
+            public final val compiledDocument: R|apollo/kotlin/CompiledDocument|
+                public get(): R|apollo/kotlin/CompiledDocument|
+
+            public constructor(): R|GetFooQuery.Companion|
+
+        }
+
+    }
+FILE: b.kt
+    @R|apollo/kotlin/Fragment|(document = String(fragment queryDetails on Query { int })) public final class QueryDetails : R|kotlin/Any|, R|apollo/kotlin/compat/FragmentCompat<QueryDetails.Data>| {
+        public constructor(): R|QueryDetails| {
+            super<R|kotlin/Any|>()
+        }
+
+        public final fun compiledDocument(): R|apollo/kotlin/CompiledDocument|
+
+        public final fun variables(): R|kotlin/collections/Map<kotlin/String, kotlin/Any?>|
+
+        public final fun dataAdapter(): R|apollo/kotlin/Adapter<QueryDetails.Data>|
+
+        public final class Data : R|apollo/kotlin/compat/FragmentCompat.Data| {
+            public final val int: R|kotlin/Int?|
+                public get(): R|kotlin/Int?|
+
+            public constructor(int: R|kotlin/Int?|): R|QueryDetails.Data|
+
+            public final object Adapter : R|apollo/kotlin/Adapter<QueryDetails.Data>| {
+                public final fun fromJson(element: R|apollo/kotlin/JsonElement|): R|QueryDetails.Data|
+
+                public final fun toJson(value: R|QueryDetails.Data|): R|apollo/kotlin/JsonElement|
+
+                public constructor(): R|QueryDetails.Data.Adapter|
+
+            }
+
+        }
+
+        public final companion object Companion : R|kotlin/Any| {
+            public final val compiledDocument: R|apollo/kotlin/CompiledDocument|
+                public get(): R|apollo/kotlin/CompiledDocument|
+
+            public constructor(): R|QueryDetails.Companion|
+
+        }
+
+    }
+    public final fun box(): R|kotlin/String| {
+        R|kotlin/check|(==(Q|GetFooQuery|.R|/GetFooQuery.Data|(Q|QueryDetails|.R|/QueryDetails.Data|(Int(4))).R|/GetFooQuery.Data.queryDetails|!!.R|/QueryDetails.Data.int|, Int(4)))
+        R|kotlin/check|(==(R|/GetFooQuery.GetFooQuery|().R|SubstitutionOverride</GetFooQuery.document: R|kotlin/String|>|(), <strcat>(String({...queryDetails}
+), String(fragment queryDetails on Query{__queryDetails:__typename,int}))))
+        ^box String(OK)
+    }

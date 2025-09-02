@@ -1,0 +1,13 @@
+type Query {
+    int: Int
+    float: Float
+    string: String
+    boolean: Boolean
+    nonNullInt: Int!
+    listOfInt: [Int]
+    object: Object
+}
+
+type Object {
+    nested: Int
+}

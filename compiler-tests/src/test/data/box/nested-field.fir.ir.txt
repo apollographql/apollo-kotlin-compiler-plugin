@@ -1,0 +1,297 @@
+FILE fqName:<root> fileName:/nested-field.kt
+  CLASS CLASS name:GetFooQuery modality:FINAL visibility:public superTypes:[kotlin.Any; apollo.kotlin.Executable<<root>.GetFooQuery.Data>]
+    annotations:
+      Query(document = "
+{
+  foo: object {
+    nested
+  }
+}
+")
+    thisReceiver: VALUE_PARAMETER INSTANCE_RECEIVER kind:DispatchReceiver name:<this> type:<root>.GetFooQuery
+    CLASS GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Model] CLASS name:Data modality:FINAL visibility:public superTypes:[kotlin.Any]
+      thisReceiver: VALUE_PARAMETER INSTANCE_RECEIVER kind:DispatchReceiver name:<this> type:<root>.GetFooQuery.Data
+      PROPERTY GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] name:foo visibility:public modality:FINAL [val]
+        FIELD PROPERTY_BACKING_FIELD name:foo type:<root>.GetFooQuery.Foo? visibility:private [final]
+        FUN DEFAULT_PROPERTY_ACCESSOR name:<get-foo> visibility:public modality:FINAL returnType:<root>.GetFooQuery.Foo?
+          VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:<root>.GetFooQuery.Data
+          correspondingProperty: PROPERTY GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] name:foo visibility:public modality:FINAL [val]
+          BLOCK_BODY
+            RETURN type=kotlin.Nothing from='public final fun <get-foo> (): <root>.GetFooQuery.Foo? declared in <root>.GetFooQuery.Data'
+              GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:foo type:<root>.GetFooQuery.Foo? visibility:private [final]' type=<root>.GetFooQuery.Foo? origin=null
+                receiver: GET_VAR '<this>: <root>.GetFooQuery.Data declared in <root>.GetFooQuery.Data.<get-foo>' type=<root>.GetFooQuery.Data origin=null
+      CLASS GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.ModelAdapter] OBJECT name:Adapter modality:FINAL visibility:public superTypes:[apollo.kotlin.Adapter<<root>.GetFooQuery.Data>]
+        thisReceiver: VALUE_PARAMETER INSTANCE_RECEIVER kind:DispatchReceiver name:<this> type:<root>.GetFooQuery.Data.Adapter
+        CONSTRUCTOR GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] visibility:public returnType:<root>.GetFooQuery.Data.Adapter [primary]
+          BLOCK_BODY
+            DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> () declared in kotlin.Any'
+            INSTANCE_INITIALIZER_CALL classDescriptor='CLASS GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.ModelAdapter] OBJECT name:Adapter modality:FINAL visibility:public superTypes:[apollo.kotlin.Adapter<<root>.GetFooQuery.Data>]' type=kotlin.Unit
+        FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN returnType:kotlin.Boolean [fake_override,operator]
+          VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+          VALUE_PARAMETER kind:Regular name:other index:1 type:kotlin.Any?
+          overridden:
+            public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in apollo.kotlin.Adapter
+        FUN FAKE_OVERRIDE name:hashCode visibility:public modality:OPEN returnType:kotlin.Int [fake_override]
+          VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+          overridden:
+            public open fun hashCode (): kotlin.Int declared in apollo.kotlin.Adapter
+        FUN FAKE_OVERRIDE name:toString visibility:public modality:OPEN returnType:kotlin.String [fake_override]
+          VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+          overridden:
+            public open fun toString (): kotlin.String declared in apollo.kotlin.Adapter
+        FUN GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] name:fromJson visibility:public modality:FINAL returnType:<root>.GetFooQuery.Data
+          VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:<root>.GetFooQuery.Data.Adapter
+          VALUE_PARAMETER GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] kind:Regular name:element index:1 type:kotlin.Any?
+          overridden:
+            public abstract fun fromJson (element: kotlin.Any?): T of apollo.kotlin.Adapter declared in apollo.kotlin.Adapter
+          BLOCK_BODY
+            CALL 'public final fun assertExpectedType <T> (value: kotlin.Any?): kotlin.Unit declared in apollo.kotlin' type=kotlin.Unit origin=null
+              TYPE_ARG T: kotlin.collections.Map<*, *>
+              ARG value: GET_VAR 'element: kotlin.Any? declared in <root>.GetFooQuery.Data.Adapter.fromJson' type=kotlin.Any? origin=null
+            RETURN type=kotlin.Nothing from='public final fun fromJson (element: kotlin.Any?): <root>.GetFooQuery.Data declared in <root>.GetFooQuery.Data.Adapter'
+              CONSTRUCTOR_CALL 'public constructor <init> (foo: <root>.GetFooQuery.Foo?) declared in <root>.GetFooQuery.Data' type=<root>.GetFooQuery.Data origin=null
+                ARG foo: CALL 'public abstract fun fromJson (element: kotlin.Any?): T of apollo.kotlin.Deserializer declared in apollo.kotlin.Deserializer' type=T of apollo.kotlin.Deserializer origin=null
+                  ARG <this>: CONSTRUCTOR_CALL 'public constructor <init> (delegate: apollo.kotlin.Adapter<T of apollo.kotlin.NullableAdapter>) declared in apollo.kotlin.NullableAdapter' type=apollo.kotlin.NullableAdapter<T of apollo.kotlin.NullableAdapter> origin=null
+                    ARG delegate: GET_OBJECT 'CLASS GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.ModelAdapter] OBJECT name:Adapter modality:FINAL visibility:public superTypes:[apollo.kotlin.Adapter<<root>.GetFooQuery.Foo>]' type=<root>.GetFooQuery.Foo.Adapter
+                  ARG element: CALL 'public abstract fun get (key: K of kotlin.collections.Map): V of kotlin.collections.Map? declared in kotlin.collections.Map' type=V of kotlin.collections.Map? origin=null
+                    ARG <this>: GET_VAR 'element: kotlin.Any? declared in <root>.GetFooQuery.Data.Adapter.fromJson' type=kotlin.Any? origin=null
+                    ARG key: CONST String type=kotlin.String value="foo"
+        FUN GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] name:toJson visibility:public modality:FINAL returnType:kotlin.Any?
+          VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:<root>.GetFooQuery.Data.Adapter
+          VALUE_PARAMETER GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] kind:Regular name:value index:1 type:<root>.GetFooQuery.Data
+          overridden:
+            public abstract fun toJson (value: T of apollo.kotlin.Adapter): kotlin.Any? declared in apollo.kotlin.Adapter
+          BLOCK_BODY
+            VAR GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] name:map type:kotlin.collections.MutableMap<kotlin.String, kotlin.Any?> [val]
+              CALL 'public final fun mutableMapOf <K, V> (): kotlin.collections.MutableMap<K of kotlin.collections.mutableMapOf, V of kotlin.collections.mutableMapOf> declared in kotlin.collections' type=kotlin.collections.MutableMap<K of kotlin.collections.mutableMapOf, V of kotlin.collections.mutableMapOf> origin=null
+                TYPE_ARG K: kotlin.String
+                TYPE_ARG V: kotlin.Any?
+            CALL 'public final fun mergeField (container: kotlin.collections.MutableMap<kotlin.String, kotlin.Any?>, name: kotlin.String, value: kotlin.Any?): kotlin.Unit declared in apollo.kotlin' type=kotlin.Unit origin=null
+              ARG container: GET_VAR 'val map: kotlin.collections.MutableMap<kotlin.String, kotlin.Any?> declared in <root>.GetFooQuery.Data.Adapter.toJson' type=kotlin.collections.MutableMap<kotlin.String, kotlin.Any?> origin=null
+              ARG name: CONST String type=kotlin.String value="foo"
+              ARG value: CALL 'public abstract fun toJson (value: T of apollo.kotlin.Serializer): kotlin.Any? declared in apollo.kotlin.Serializer' type=kotlin.Any? origin=null
+                ARG <this>: CONSTRUCTOR_CALL 'public constructor <init> (delegate: apollo.kotlin.Adapter<T of apollo.kotlin.NullableAdapter>) declared in apollo.kotlin.NullableAdapter' type=apollo.kotlin.NullableAdapter<T of apollo.kotlin.NullableAdapter> origin=null
+                  ARG delegate: GET_OBJECT 'CLASS GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.ModelAdapter] OBJECT name:Adapter modality:FINAL visibility:public superTypes:[apollo.kotlin.Adapter<<root>.GetFooQuery.Foo>]' type=<root>.GetFooQuery.Foo.Adapter
+                ARG value: CALL 'public final fun <get-foo> (): <root>.GetFooQuery.Foo? declared in <root>.GetFooQuery.Data' type=<root>.GetFooQuery.Foo? origin=null
+                  ARG <this>: GET_VAR 'value: <root>.GetFooQuery.Data declared in <root>.GetFooQuery.Data.Adapter.toJson' type=<root>.GetFooQuery.Data origin=null
+            RETURN type=kotlin.Nothing from='public final fun toJson (value: <root>.GetFooQuery.Data): kotlin.Any? declared in <root>.GetFooQuery.Data.Adapter'
+              GET_VAR 'val map: kotlin.collections.MutableMap<kotlin.String, kotlin.Any?> declared in <root>.GetFooQuery.Data.Adapter.toJson' type=kotlin.collections.MutableMap<kotlin.String, kotlin.Any?> origin=null
+      CONSTRUCTOR GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] visibility:public returnType:<root>.GetFooQuery.Data [primary]
+        VALUE_PARAMETER GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] kind:Regular name:foo index:0 type:<root>.GetFooQuery.Foo?
+        BLOCK_BODY
+          DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> () declared in kotlin.Any'
+          INSTANCE_INITIALIZER_CALL classDescriptor='CLASS GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Model] CLASS name:Data modality:FINAL visibility:public superTypes:[kotlin.Any]' type=kotlin.Unit
+          SET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:foo type:<root>.GetFooQuery.Foo? visibility:private [final]' type=kotlin.Unit origin=null
+            receiver: GET_VAR '<this>: <root>.GetFooQuery.Data declared in <root>.GetFooQuery.Data' type=<root>.GetFooQuery.Data origin=null
+            value: GET_VAR 'foo: <root>.GetFooQuery.Foo? declared in <root>.GetFooQuery.Data.<init>' type=<root>.GetFooQuery.Foo? origin=null
+      FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN returnType:kotlin.Boolean [fake_override,operator]
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+        VALUE_PARAMETER kind:Regular name:other index:1 type:kotlin.Any?
+        overridden:
+          public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in kotlin.Any
+      FUN FAKE_OVERRIDE name:hashCode visibility:public modality:OPEN returnType:kotlin.Int [fake_override]
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+        overridden:
+          public open fun hashCode (): kotlin.Int declared in kotlin.Any
+      FUN FAKE_OVERRIDE name:toString visibility:public modality:OPEN returnType:kotlin.String [fake_override]
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+        overridden:
+          public open fun toString (): kotlin.String declared in kotlin.Any
+    CLASS GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Model] CLASS name:Foo modality:FINAL visibility:public superTypes:[kotlin.Any]
+      thisReceiver: VALUE_PARAMETER INSTANCE_RECEIVER kind:DispatchReceiver name:<this> type:<root>.GetFooQuery.Foo
+      PROPERTY GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] name:nested visibility:public modality:FINAL [val]
+        FIELD PROPERTY_BACKING_FIELD name:nested type:kotlin.Int? visibility:private [final]
+        FUN DEFAULT_PROPERTY_ACCESSOR name:<get-nested> visibility:public modality:FINAL returnType:kotlin.Int?
+          VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:<root>.GetFooQuery.Foo
+          correspondingProperty: PROPERTY GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] name:nested visibility:public modality:FINAL [val]
+          BLOCK_BODY
+            RETURN type=kotlin.Nothing from='public final fun <get-nested> (): kotlin.Int? declared in <root>.GetFooQuery.Foo'
+              GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:nested type:kotlin.Int? visibility:private [final]' type=kotlin.Int? origin=null
+                receiver: GET_VAR '<this>: <root>.GetFooQuery.Foo declared in <root>.GetFooQuery.Foo.<get-nested>' type=<root>.GetFooQuery.Foo origin=null
+      CLASS GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.ModelAdapter] OBJECT name:Adapter modality:FINAL visibility:public superTypes:[apollo.kotlin.Adapter<<root>.GetFooQuery.Foo>]
+        thisReceiver: VALUE_PARAMETER INSTANCE_RECEIVER kind:DispatchReceiver name:<this> type:<root>.GetFooQuery.Foo.Adapter
+        CONSTRUCTOR GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] visibility:public returnType:<root>.GetFooQuery.Foo.Adapter [primary]
+          BLOCK_BODY
+            DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> () declared in kotlin.Any'
+            INSTANCE_INITIALIZER_CALL classDescriptor='CLASS GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.ModelAdapter] OBJECT name:Adapter modality:FINAL visibility:public superTypes:[apollo.kotlin.Adapter<<root>.GetFooQuery.Foo>]' type=kotlin.Unit
+        FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN returnType:kotlin.Boolean [fake_override,operator]
+          VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+          VALUE_PARAMETER kind:Regular name:other index:1 type:kotlin.Any?
+          overridden:
+            public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in apollo.kotlin.Adapter
+        FUN FAKE_OVERRIDE name:hashCode visibility:public modality:OPEN returnType:kotlin.Int [fake_override]
+          VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+          overridden:
+            public open fun hashCode (): kotlin.Int declared in apollo.kotlin.Adapter
+        FUN FAKE_OVERRIDE name:toString visibility:public modality:OPEN returnType:kotlin.String [fake_override]
+          VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+          overridden:
+            public open fun toString (): kotlin.String declared in apollo.kotlin.Adapter
+        FUN GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] name:fromJson visibility:public modality:FINAL returnType:<root>.GetFooQuery.Foo
+          VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:<root>.GetFooQuery.Foo.Adapter
+          VALUE_PARAMETER GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] kind:Regular name:element index:1 type:kotlin.Any?
+          overridden:
+            public abstract fun fromJson (element: kotlin.Any?): T of apollo.kotlin.Adapter declared in apollo.kotlin.Adapter
+          BLOCK_BODY
+            CALL 'public final fun assertExpectedType <T> (value: kotlin.Any?): kotlin.Unit declared in apollo.kotlin' type=kotlin.Unit origin=null
+              TYPE_ARG T: kotlin.collections.Map<*, *>
+              ARG value: GET_VAR 'element: kotlin.Any? declared in <root>.GetFooQuery.Foo.Adapter.fromJson' type=kotlin.Any? origin=null
+            RETURN type=kotlin.Nothing from='public final fun fromJson (element: kotlin.Any?): <root>.GetFooQuery.Foo declared in <root>.GetFooQuery.Foo.Adapter'
+              CONSTRUCTOR_CALL 'public constructor <init> (nested: kotlin.Int?) declared in <root>.GetFooQuery.Foo' type=<root>.GetFooQuery.Foo origin=null
+                ARG nested: CALL 'public abstract fun fromJson (element: kotlin.Any?): T of apollo.kotlin.Deserializer declared in apollo.kotlin.Deserializer' type=T of apollo.kotlin.Deserializer origin=null
+                  ARG <this>: CONSTRUCTOR_CALL 'public constructor <init> (delegate: apollo.kotlin.Adapter<T of apollo.kotlin.NullableAdapter>) declared in apollo.kotlin.NullableAdapter' type=apollo.kotlin.NullableAdapter<T of apollo.kotlin.NullableAdapter> origin=null
+                    ARG delegate: GET_OBJECT 'CLASS IR_EXTERNAL_DECLARATION_STUB OBJECT name:IntAdapter modality:FINAL visibility:public superTypes:[apollo.kotlin.Adapter<kotlin.Int>]' type=apollo.kotlin.IntAdapter
+                  ARG element: CALL 'public abstract fun get (key: K of kotlin.collections.Map): V of kotlin.collections.Map? declared in kotlin.collections.Map' type=V of kotlin.collections.Map? origin=null
+                    ARG <this>: GET_VAR 'element: kotlin.Any? declared in <root>.GetFooQuery.Foo.Adapter.fromJson' type=kotlin.Any? origin=null
+                    ARG key: CONST String type=kotlin.String value="nested"
+        FUN GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] name:toJson visibility:public modality:FINAL returnType:kotlin.Any?
+          VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:<root>.GetFooQuery.Foo.Adapter
+          VALUE_PARAMETER GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] kind:Regular name:value index:1 type:<root>.GetFooQuery.Foo
+          overridden:
+            public abstract fun toJson (value: T of apollo.kotlin.Adapter): kotlin.Any? declared in apollo.kotlin.Adapter
+          BLOCK_BODY
+            VAR GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] name:map type:kotlin.collections.MutableMap<kotlin.String, kotlin.Any?> [val]
+              CALL 'public final fun mutableMapOf <K, V> (): kotlin.collections.MutableMap<K of kotlin.collections.mutableMapOf, V of kotlin.collections.mutableMapOf> declared in kotlin.collections' type=kotlin.collections.MutableMap<K of kotlin.collections.mutableMapOf, V of kotlin.collections.mutableMapOf> origin=null
+                TYPE_ARG K: kotlin.String
+                TYPE_ARG V: kotlin.Any?
+            CALL 'public final fun mergeField (container: kotlin.collections.MutableMap<kotlin.String, kotlin.Any?>, name: kotlin.String, value: kotlin.Any?): kotlin.Unit declared in apollo.kotlin' type=kotlin.Unit origin=null
+              ARG container: GET_VAR 'val map: kotlin.collections.MutableMap<kotlin.String, kotlin.Any?> declared in <root>.GetFooQuery.Foo.Adapter.toJson' type=kotlin.collections.MutableMap<kotlin.String, kotlin.Any?> origin=null
+              ARG name: CONST String type=kotlin.String value="nested"
+              ARG value: CALL 'public abstract fun toJson (value: T of apollo.kotlin.Serializer): kotlin.Any? declared in apollo.kotlin.Serializer' type=kotlin.Any? origin=null
+                ARG <this>: CONSTRUCTOR_CALL 'public constructor <init> (delegate: apollo.kotlin.Adapter<T of apollo.kotlin.NullableAdapter>) declared in apollo.kotlin.NullableAdapter' type=apollo.kotlin.NullableAdapter<T of apollo.kotlin.NullableAdapter> origin=null
+                  ARG delegate: GET_OBJECT 'CLASS IR_EXTERNAL_DECLARATION_STUB OBJECT name:IntAdapter modality:FINAL visibility:public superTypes:[apollo.kotlin.Adapter<kotlin.Int>]' type=apollo.kotlin.IntAdapter
+                ARG value: CALL 'public final fun <get-nested> (): kotlin.Int? declared in <root>.GetFooQuery.Foo' type=kotlin.Int? origin=null
+                  ARG <this>: GET_VAR 'value: <root>.GetFooQuery.Foo declared in <root>.GetFooQuery.Foo.Adapter.toJson' type=<root>.GetFooQuery.Foo origin=null
+            RETURN type=kotlin.Nothing from='public final fun toJson (value: <root>.GetFooQuery.Foo): kotlin.Any? declared in <root>.GetFooQuery.Foo.Adapter'
+              GET_VAR 'val map: kotlin.collections.MutableMap<kotlin.String, kotlin.Any?> declared in <root>.GetFooQuery.Foo.Adapter.toJson' type=kotlin.collections.MutableMap<kotlin.String, kotlin.Any?> origin=null
+      CONSTRUCTOR GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] visibility:public returnType:<root>.GetFooQuery.Foo [primary]
+        VALUE_PARAMETER GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] kind:Regular name:nested index:0 type:kotlin.Int?
+        BLOCK_BODY
+          DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> () declared in kotlin.Any'
+          INSTANCE_INITIALIZER_CALL classDescriptor='CLASS GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Model] CLASS name:Foo modality:FINAL visibility:public superTypes:[kotlin.Any]' type=kotlin.Unit
+          SET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:nested type:kotlin.Int? visibility:private [final]' type=kotlin.Unit origin=null
+            receiver: GET_VAR '<this>: <root>.GetFooQuery.Foo declared in <root>.GetFooQuery.Foo' type=<root>.GetFooQuery.Foo origin=null
+            value: GET_VAR 'nested: kotlin.Int? declared in <root>.GetFooQuery.Foo.<init>' type=kotlin.Int? origin=null
+      FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN returnType:kotlin.Boolean [fake_override,operator]
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+        VALUE_PARAMETER kind:Regular name:other index:1 type:kotlin.Any?
+        overridden:
+          public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in kotlin.Any
+      FUN FAKE_OVERRIDE name:hashCode visibility:public modality:OPEN returnType:kotlin.Int [fake_override]
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+        overridden:
+          public open fun hashCode (): kotlin.Int declared in kotlin.Any
+      FUN FAKE_OVERRIDE name:toString visibility:public modality:OPEN returnType:kotlin.String [fake_override]
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+        overridden:
+          public open fun toString (): kotlin.String declared in kotlin.Any
+    CLASS GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.OperationCompanion] OBJECT name:Companion modality:FINAL visibility:public [companion] superTypes:[kotlin.Any]
+      thisReceiver: VALUE_PARAMETER INSTANCE_RECEIVER kind:DispatchReceiver name:<this> type:<root>.GetFooQuery.Companion
+      PROPERTY GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] name:compiledDocument visibility:public modality:FINAL [val]
+        FIELD PROPERTY_BACKING_FIELD name:compiledDocument type:apollo.kotlin.CompiledDocument visibility:private [final]
+          EXPRESSION_BODY
+            CONSTRUCTOR_CALL 'public constructor <init> (operations: kotlin.collections.List<apollo.kotlin.CompiledOperation>, fragments: kotlin.collections.List<apollo.kotlin.CompiledFragmentDefinition>) declared in apollo.kotlin.CompiledDocument' type=apollo.kotlin.CompiledDocument origin=null
+              ARG operations: CALL 'public final fun listOf <T> (element: T of kotlin.collections.listOf): kotlin.collections.List<T of kotlin.collections.listOf> declared in kotlin.collections' type=kotlin.collections.List<T of kotlin.collections.listOf> origin=null
+                TYPE_ARG T: <none>
+                ARG element: CONSTRUCTOR_CALL 'public constructor <init> (name: kotlin.String, operationType: apollo.kotlin.CompiledOperationType, selections: kotlin.collections.List<apollo.kotlin.CompiledSelection>, rawType: kotlin.String) declared in apollo.kotlin.CompiledOperation' type=apollo.kotlin.CompiledOperation origin=null
+                  ARG name: CONST String type=kotlin.String value=""
+                  ARG operationType: GET_ENUM 'ENUM_ENTRY IR_EXTERNAL_DECLARATION_STUB name:Query' type=apollo.kotlin.CompiledOperationType
+                  ARG selections: CALL 'public final fun listOf <T> (element: T of kotlin.collections.listOf): kotlin.collections.List<T of kotlin.collections.listOf> declared in kotlin.collections' type=kotlin.collections.List<T of kotlin.collections.listOf> origin=null
+                    TYPE_ARG T: <none>
+                    ARG element: CONSTRUCTOR_CALL 'public constructor <init> (alias: kotlin.String?, name: kotlin.String, arguments: kotlin.collections.List<apollo.kotlin.CompiledArgument>, selections: kotlin.collections.List<apollo.kotlin.CompiledSelection>, type: kotlin.String) declared in apollo.kotlin.CompiledField' type=apollo.kotlin.CompiledField origin=null
+                      ARG alias: CONST String type=kotlin.String value="foo"
+                      ARG name: CONST String type=kotlin.String value="object"
+                      ARG arguments: CALL 'public final fun emptyList <T> (): kotlin.collections.List<T of kotlin.collections.emptyList> declared in kotlin.collections' type=kotlin.collections.List<T of kotlin.collections.emptyList> origin=null
+                        TYPE_ARG T: <none>
+                      ARG selections: CALL 'public final fun listOf <T> (element: T of kotlin.collections.listOf): kotlin.collections.List<T of kotlin.collections.listOf> declared in kotlin.collections' type=kotlin.collections.List<T of kotlin.collections.listOf> origin=null
+                        TYPE_ARG T: <none>
+                        ARG element: CONSTRUCTOR_CALL 'public constructor <init> (alias: kotlin.String?, name: kotlin.String, arguments: kotlin.collections.List<apollo.kotlin.CompiledArgument>, selections: kotlin.collections.List<apollo.kotlin.CompiledSelection>, type: kotlin.String) declared in apollo.kotlin.CompiledField' type=apollo.kotlin.CompiledField origin=null
+                          ARG alias: CONST Null type=kotlin.Nothing value=null
+                          ARG name: CONST String type=kotlin.String value="nested"
+                          ARG arguments: CALL 'public final fun emptyList <T> (): kotlin.collections.List<T of kotlin.collections.emptyList> declared in kotlin.collections' type=kotlin.collections.List<T of kotlin.collections.emptyList> origin=null
+                            TYPE_ARG T: <none>
+                          ARG selections: CALL 'public final fun emptyList <T> (): kotlin.collections.List<T of kotlin.collections.emptyList> declared in kotlin.collections' type=kotlin.collections.List<T of kotlin.collections.emptyList> origin=null
+                            TYPE_ARG T: <none>
+                          ARG type: CONST String type=kotlin.String value="-Int"
+                      ARG type: CONST String type=kotlin.String value="Object"
+                  ARG rawType: CONST String type=kotlin.String value="Query"
+              ARG fragments: CALL 'public final fun emptyList <T> (): kotlin.collections.List<T of kotlin.collections.emptyList> declared in kotlin.collections' type=kotlin.collections.List<T of kotlin.collections.emptyList> origin=null
+                TYPE_ARG T: <none>
+        FUN DEFAULT_PROPERTY_ACCESSOR name:<get-compiledDocument> visibility:public modality:FINAL returnType:apollo.kotlin.CompiledDocument
+          VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:<root>.GetFooQuery.Companion
+          correspondingProperty: PROPERTY GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] name:compiledDocument visibility:public modality:FINAL [val]
+          BLOCK_BODY
+            RETURN type=kotlin.Nothing from='public final fun <get-compiledDocument> (): apollo.kotlin.CompiledDocument declared in <root>.GetFooQuery.Companion'
+              GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:compiledDocument type:apollo.kotlin.CompiledDocument visibility:private [final]' type=apollo.kotlin.CompiledDocument origin=null
+                receiver: GET_VAR '<this>: <root>.GetFooQuery.Companion declared in <root>.GetFooQuery.Companion.<get-compiledDocument>' type=<root>.GetFooQuery.Companion origin=null
+      CONSTRUCTOR GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] visibility:public returnType:<root>.GetFooQuery.Companion [primary]
+        BLOCK_BODY
+          DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> () declared in kotlin.Any'
+          INSTANCE_INITIALIZER_CALL classDescriptor='CLASS GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.OperationCompanion] OBJECT name:Companion modality:FINAL visibility:public [companion] superTypes:[kotlin.Any]' type=kotlin.Unit
+      FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN returnType:kotlin.Boolean [fake_override,operator]
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+        VALUE_PARAMETER kind:Regular name:other index:1 type:kotlin.Any?
+        overridden:
+          public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in kotlin.Any
+      FUN FAKE_OVERRIDE name:hashCode visibility:public modality:OPEN returnType:kotlin.Int [fake_override]
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+        overridden:
+          public open fun hashCode (): kotlin.Int declared in kotlin.Any
+      FUN FAKE_OVERRIDE name:toString visibility:public modality:OPEN returnType:kotlin.String [fake_override]
+        VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+        overridden:
+          public open fun toString (): kotlin.String declared in kotlin.Any
+    CONSTRUCTOR visibility:public returnType:<root>.GetFooQuery [primary]
+      BLOCK_BODY
+        DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> () declared in kotlin.Any'
+        INSTANCE_INITIALIZER_CALL classDescriptor='CLASS CLASS name:GetFooQuery modality:FINAL visibility:public superTypes:[kotlin.Any; apollo.kotlin.Executable<<root>.GetFooQuery.Data>]' type=kotlin.Unit
+    FUN FAKE_OVERRIDE name:equals visibility:public modality:OPEN returnType:kotlin.Boolean [fake_override,operator]
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+      VALUE_PARAMETER kind:Regular name:other index:1 type:kotlin.Any?
+      overridden:
+        public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in kotlin.Any
+        public open fun equals (other: kotlin.Any?): kotlin.Boolean declared in apollo.kotlin.Executable
+    FUN FAKE_OVERRIDE name:hashCode visibility:public modality:OPEN returnType:kotlin.Int [fake_override]
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+      overridden:
+        public open fun hashCode (): kotlin.Int declared in kotlin.Any
+        public open fun hashCode (): kotlin.Int declared in apollo.kotlin.Executable
+    FUN FAKE_OVERRIDE name:toString visibility:public modality:OPEN returnType:kotlin.String [fake_override]
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:kotlin.Any
+      overridden:
+        public open fun toString (): kotlin.String declared in kotlin.Any
+        public open fun toString (): kotlin.String declared in apollo.kotlin.Executable
+    FUN GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] name:compiledDocument visibility:public modality:FINAL returnType:apollo.kotlin.CompiledDocument
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:<root>.GetFooQuery
+      overridden:
+        public abstract fun compiledDocument (): apollo.kotlin.CompiledDocument declared in apollo.kotlin.Executable
+      BLOCK_BODY
+        RETURN type=kotlin.Nothing from='public final fun compiledDocument (): apollo.kotlin.CompiledDocument declared in <root>.GetFooQuery'
+          CALL 'public final fun <get-compiledDocument> (): apollo.kotlin.CompiledDocument declared in <root>.GetFooQuery.Companion' type=apollo.kotlin.CompiledDocument origin=null
+            ARG <this>: GET_OBJECT 'CLASS GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.OperationCompanion] OBJECT name:Companion modality:FINAL visibility:public [companion] superTypes:[kotlin.Any]' type=<root>.GetFooQuery.Companion
+    FUN GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] name:dataAdapter visibility:public modality:FINAL returnType:apollo.kotlin.Adapter<<root>.GetFooQuery.Data>
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:<root>.GetFooQuery
+      overridden:
+        public abstract fun dataAdapter (): apollo.kotlin.Adapter<D of apollo.kotlin.Executable> declared in apollo.kotlin.Executable
+      BLOCK_BODY
+        RETURN type=kotlin.Nothing from='public final fun dataAdapter (): apollo.kotlin.Adapter<<root>.GetFooQuery.Data> declared in <root>.GetFooQuery'
+          GET_OBJECT 'CLASS GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.ModelAdapter] OBJECT name:Adapter modality:FINAL visibility:public superTypes:[apollo.kotlin.Adapter<<root>.GetFooQuery.Data>]' type=<root>.GetFooQuery.Data.Adapter
+    FUN GENERATED[apollo.kotlin.compiler.plugin.fir.Keys.Apollo] name:variables visibility:public modality:FINAL returnType:kotlin.collections.Map<kotlin.String, kotlin.Any?>
+      VALUE_PARAMETER kind:DispatchReceiver name:<this> index:0 type:<root>.GetFooQuery
+      overridden:
+        public abstract fun variables (): kotlin.collections.Map<kotlin.String, kotlin.Any?> declared in apollo.kotlin.Executable
+      BLOCK_BODY
+        RETURN type=kotlin.Nothing from='public final fun variables (): kotlin.collections.Map<kotlin.String, kotlin.Any?> declared in <root>.GetFooQuery'
+          CALL 'public final fun emptyMap <K, V> (): kotlin.collections.Map<K of kotlin.collections.emptyMap, V of kotlin.collections.emptyMap> declared in kotlin.collections' type=kotlin.collections.Map<K of kotlin.collections.emptyMap, V of kotlin.collections.emptyMap> origin=null
+            TYPE_ARG K: <none>
+            TYPE_ARG V: <none>
+  FUN name:box visibility:public modality:FINAL returnType:kotlin.String
+    BLOCK_BODY
+      VAR name:foo type:<root>.GetFooQuery.Foo [val]
+        CONSTRUCTOR_CALL 'public constructor <init> (nested: kotlin.Int?) declared in <root>.GetFooQuery.Foo' type=<root>.GetFooQuery.Foo origin=null
+          ARG nested: CONST Int type=kotlin.Int value=4
+      TYPE_OP type=kotlin.Unit origin=IMPLICIT_COERCION_TO_UNIT typeOperand=kotlin.Unit
+        CONSTRUCTOR_CALL 'public constructor <init> (foo: <root>.GetFooQuery.Foo?) declared in <root>.GetFooQuery.Data' type=<root>.GetFooQuery.Data origin=null
+          ARG foo: GET_VAR 'val foo: <root>.GetFooQuery.Foo declared in <root>.box' type=<root>.GetFooQuery.Foo origin=null
+      RETURN type=kotlin.Nothing from='public final fun box (): kotlin.String declared in <root>'
+        CONST String type=kotlin.String value="OK"

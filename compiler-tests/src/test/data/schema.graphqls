@@ -1,0 +1,31 @@
+type Query {
+    int: Int
+    float: Float
+    string: String
+    boolean: Boolean
+    nonNullInt: Int!
+    listOfInt: [Int]
+    object: Object
+    node: Node!
+    point: Point!
+}
+
+type Object {
+    nested: Int
+}
+
+interface Node {
+    id: String!
+}
+
+type Product implements Node {
+    id: String!
+    price: Float!
+}
+
+type Review implements Node {
+    id: String!
+    text: String!
+}
+
+scalar Point

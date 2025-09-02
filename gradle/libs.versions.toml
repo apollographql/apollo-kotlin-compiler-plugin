@@ -1,0 +1,34 @@
+[versions]
+compat-patrouille = "0.0.0"
+gratatouille = "0.1.2"
+gratatouille-runtime = "0.1.2"
+kgp = "2.2.20-RC"
+ksp = "2.2.20-RC-2.0.2"
+kctf = "2.2.20-RC-0.0.1-SNAPSHOT-1ec706847053d49bc9a048628a34a3da16373bf6"
+kct = "0.8.0"
+okio = "3.16.0"
+apollo = "5.0.0-alpha.2"
+
+[libraries]
+apollo-ast = { module = "com.apollographql.apollo:apollo-ast", version.ref = "apollo" }
+apollo-api = { module = "com.apollographql.apollo:apollo-api", version.ref = "apollo" }
+compat-patrouille = { module = "com.gradleup.compat.patrouille:com.gradleup.compat.patrouille.gradle.plugin", version.ref = "compat-patrouille" }
+coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2"
+coroutines-test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.2"
+gradle-api = "dev.gradleplugins:gradle-api:8.11.1"
+gratatouille = { module = "com.gradleup.gratatouille:gratatouille-gradle-plugin", version.ref = "gratatouille" }
+gratatouille-tasks-runtime = { module = "com.gradleup.gratatouille:gratatouille-tasks-runtime", version.ref = "gratatouille-runtime" }
+gratatouille-wiring-runtime = { module = "com.gradleup.gratatouille:gratatouille-wiring-runtime", version.ref = "gratatouille-runtime" }
+kgp = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kgp" }
+kct = { module = "dev.zacsweers.kctfork:core", version.ref = "kct" }
+kotlin-compilerEmbeddable = { module = "org.jetbrains.kotlin:kotlin-compiler-embeddable", version.ref = "kgp" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test" }
+kctf-gradle-plugin = { module = "com.gradleup.kctf:kctf-gradle-plugin", version.ref = "kctf" }
+kctf-runtime = { module = "com.gradleup.kctf:kctf-runtime", version.ref = "kctf" }
+ksp = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+librarian = "com.gradleup.librarian:com.gradleup.librarian.gradle.plugin:0.1.1-SNAPSHOT-44a36034d83f8ba9c9177653f29df3dea933fc3f"
+okio = { group = "com.squareup.okio", name = "okio", version.ref = "okio" }
+cast = "net.mbonnin.cast:cast:0.0.1"
+
+[plugins]
+kgp-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kgp" }
