@@ -1,0 +1,66 @@
+FILE: adapter-write.kt
+    @R|apollo/kotlin/Query|(document = String(
+{
+  object {
+    nested
+  }
+}
+)) public final class GetFooQuery : R|kotlin/Any|, R|apollo/kotlin/Executable<GetFooQuery.Data>| {
+        public constructor(): R|GetFooQuery| {
+            super<R|kotlin/Any|>()
+        }
+
+        public final fun compiledDocument(): R|apollo/kotlin/CompiledDocument|
+
+        public final fun variables(): R|kotlin/collections/Map<kotlin/String, kotlin/Any?>|
+
+        public final fun dataAdapter(): R|apollo/kotlin/Adapter<GetFooQuery.Data>|
+
+        public final class Data : R|kotlin/Any| {
+            public final val object: R|GetFooQuery.Object?|
+                public get(): R|GetFooQuery.Object?|
+
+            public constructor(object: R|GetFooQuery.Object?|): R|GetFooQuery.Data|
+
+            public final object Adapter : R|apollo/kotlin/Adapter<GetFooQuery.Data>| {
+                public final fun fromJson(element: R|apollo/kotlin/JsonElement|): R|GetFooQuery.Data|
+
+                public final fun toJson(value: R|GetFooQuery.Data|): R|apollo/kotlin/JsonElement|
+
+                public constructor(): R|GetFooQuery.Data.Adapter|
+
+            }
+
+        }
+
+        public final class Object : R|kotlin/Any| {
+            public final val nested: R|kotlin/Int?|
+                public get(): R|kotlin/Int?|
+
+            public constructor(nested: R|kotlin/Int?|): R|GetFooQuery.Object|
+
+            public final object Adapter : R|apollo/kotlin/Adapter<GetFooQuery.Object>| {
+                public final fun fromJson(element: R|apollo/kotlin/JsonElement|): R|GetFooQuery.Object|
+
+                public final fun toJson(value: R|GetFooQuery.Object|): R|apollo/kotlin/JsonElement|
+
+                public constructor(): R|GetFooQuery.Object.Adapter|
+
+            }
+
+        }
+
+        public final companion object Companion : R|kotlin/Any| {
+            public final val compiledDocument: R|apollo/kotlin/CompiledDocument|
+                public get(): R|apollo/kotlin/CompiledDocument|
+
+            public constructor(): R|GetFooQuery.Companion|
+
+        }
+
+    }
+    public final fun box(): R|kotlin/String| {
+        lval map: R|apollo/kotlin/JsonElement| = Q|GetFooQuery.Data.Adapter|.R|/GetFooQuery.Data.Adapter.toJson|(Q|GetFooQuery|.R|/GetFooQuery.Data|(Q|GetFooQuery|.R|/GetFooQuery.Object|(Int(4))))
+        R|kotlin/check|(==(((R|<local>/map| as R|kotlin/collections/Map<kotlin/String, kotlin/Any?>|).R|SubstitutionOverride<kotlin/collections/Map.get: R|kotlin/Any?|>|(String(object)) as R|kotlin/collections/Map<kotlin/String, kotlin/Any?>|).R|SubstitutionOverride<kotlin/collections/Map.get: R|kotlin/Any?|>|(String(nested)), Int(4)))
+        ^box String(OK)
+    }

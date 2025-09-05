@@ -1,0 +1,26 @@
+FILE: playground.kt
+    public abstract class BaseFoo : R|kotlin/Any| {
+        public constructor(): R|BaseFoo| {
+            super<R|kotlin/Any|>()
+        }
+
+        public final fun document(): R|kotlin/String| {
+            ^document this@R|/BaseFoo|.R|/BaseFoo.field|().R|kotlin/String.plus|(String(foo))
+        }
+
+        public abstract fun field(): R|kotlin/String|
+
+    }
+    public final class Foo : R|BaseFoo| {
+        public constructor(): R|Foo| {
+            super<R|BaseFoo|>()
+        }
+
+        public open override fun field(): R|kotlin/String| {
+            ^field String(Foo)
+        }
+
+    }
+    public final fun box(): R|kotlin/String| {
+        ^box String(OK)
+    }

@@ -1,0 +1,116 @@
+FILE: inline-fragment-write.kt
+    @R|apollo/kotlin/Query|(document = String(
+{
+  node {
+    id
+    ... on Product {
+      price
+    }
+    ... on Review {
+      text
+    }
+  }
+}
+)) public final class GetFooQuery : R|kotlin/Any|, R|apollo/kotlin/Executable<GetFooQuery.Data>| {
+        public constructor(): R|GetFooQuery| {
+            super<R|kotlin/Any|>()
+        }
+
+        public final fun compiledDocument(): R|apollo/kotlin/CompiledDocument|
+
+        public final fun variables(): R|kotlin/collections/Map<kotlin/String, kotlin/Any?>|
+
+        public final fun dataAdapter(): R|apollo/kotlin/Adapter<GetFooQuery.Data>|
+
+        public final class Data : R|kotlin/Any| {
+            public final val node: R|GetFooQuery.Node|
+                public get(): R|GetFooQuery.Node|
+
+            public constructor(node: R|GetFooQuery.Node|): R|GetFooQuery.Data|
+
+            public final object Adapter : R|apollo/kotlin/Adapter<GetFooQuery.Data>| {
+                public final fun fromJson(element: R|apollo/kotlin/JsonElement|): R|GetFooQuery.Data|
+
+                public final fun toJson(value: R|GetFooQuery.Data|): R|apollo/kotlin/JsonElement|
+
+                public constructor(): R|GetFooQuery.Data.Adapter|
+
+            }
+
+        }
+
+        public final class Node : R|kotlin/Any| {
+            public final val id: R|kotlin/String|
+                public get(): R|kotlin/String|
+
+            public final val onProduct: R|GetFooQuery.OnProduct?|
+                public get(): R|GetFooQuery.OnProduct?|
+
+            public final val onReview: R|GetFooQuery.OnReview?|
+                public get(): R|GetFooQuery.OnReview?|
+
+            public constructor(id: R|kotlin/String|, onProduct: R|GetFooQuery.OnProduct?|, onReview: R|GetFooQuery.OnReview?|): R|GetFooQuery.Node|
+
+            public final object Adapter : R|apollo/kotlin/Adapter<GetFooQuery.Node>| {
+                public final fun fromJson(element: R|apollo/kotlin/JsonElement|): R|GetFooQuery.Node|
+
+                public final fun toJson(value: R|GetFooQuery.Node|): R|apollo/kotlin/JsonElement|
+
+                public constructor(): R|GetFooQuery.Node.Adapter|
+
+            }
+
+        }
+
+        public final class OnProduct : R|kotlin/Any| {
+            public final val price: R|kotlin/Double|
+                public get(): R|kotlin/Double|
+
+            public constructor(price: R|kotlin/Double|): R|GetFooQuery.OnProduct|
+
+            public final object Adapter : R|apollo/kotlin/Adapter<GetFooQuery.OnProduct>| {
+                public final fun fromJson(element: R|apollo/kotlin/JsonElement|): R|GetFooQuery.OnProduct|
+
+                public final fun toJson(value: R|GetFooQuery.OnProduct|): R|apollo/kotlin/JsonElement|
+
+                public constructor(): R|GetFooQuery.OnProduct.Adapter|
+
+            }
+
+        }
+
+        public final class OnReview : R|kotlin/Any| {
+            public final val text: R|kotlin/String|
+                public get(): R|kotlin/String|
+
+            public constructor(text: R|kotlin/String|): R|GetFooQuery.OnReview|
+
+            public final object Adapter : R|apollo/kotlin/Adapter<GetFooQuery.OnReview>| {
+                public final fun fromJson(element: R|apollo/kotlin/JsonElement|): R|GetFooQuery.OnReview|
+
+                public final fun toJson(value: R|GetFooQuery.OnReview|): R|apollo/kotlin/JsonElement|
+
+                public constructor(): R|GetFooQuery.OnReview.Adapter|
+
+            }
+
+        }
+
+        public final companion object Companion : R|kotlin/Any| {
+            public final val compiledDocument: R|apollo/kotlin/CompiledDocument|
+                public get(): R|apollo/kotlin/CompiledDocument|
+
+            public constructor(): R|GetFooQuery.Companion|
+
+        }
+
+    }
+    public final fun box(): R|kotlin/String| {
+        lval map: R|apollo/kotlin/JsonElement| = Q|GetFooQuery.Data.Adapter|.R|/GetFooQuery.Data.Adapter.toJson|(Q|GetFooQuery|.R|/GetFooQuery.Data|(Q|GetFooQuery|.R|/GetFooQuery.Node|(String(42), Q|GetFooQuery|.R|/GetFooQuery.OnReview|(String(Great)), Null(null))))
+        (R|<local>/map| as R|kotlin/collections/Map<kotlin/String, kotlin/Any?>|)
+        lval node: R|kotlin/Any?| = R|<local>/map|.R|SubstitutionOverride<kotlin/collections/Map.get: R|kotlin/Any?|>|(String(node))
+        (R|<local>/node| as R|kotlin/collections/Map<kotlin/String, kotlin/Any?>|)
+        R|kotlin/check|(==(R|<local>/node|.R|SubstitutionOverride<kotlin/collections/Map.get: R|kotlin/Any?|>|(String(id)), String(42)))
+        R|kotlin/check|(==(R|<local>/node|.R|SubstitutionOverride<kotlin/collections/Map.get: R|kotlin/Any?|>|(String(text)), String(Great)))
+        ^box String(OK)
+    }

@@ -1,0 +1,158 @@
+FILE: fragment-spread-read.kt
+    @R|apollo/kotlin/Query|(document = String(
+{
+  node {
+    id
+    ...productDetails
+    ...reviewDetails
+  }
+}
+)) public final class GetFooQuery : R|kotlin/Any|, R|apollo/kotlin/Executable<GetFooQuery.Data>| {
+        public constructor(): R|GetFooQuery| {
+            super<R|kotlin/Any|>()
+        }
+
+        public final fun compiledDocument(): R|apollo/kotlin/CompiledDocument|
+
+        public final fun variables(): R|kotlin/collections/Map<kotlin/String, kotlin/Any?>|
+
+        public final fun dataAdapter(): R|apollo/kotlin/Adapter<GetFooQuery.Data>|
+
+        public final class Data : R|kotlin/Any| {
+            public final val node: R|GetFooQuery.Node|
+                public get(): R|GetFooQuery.Node|
+
+            public constructor(node: R|GetFooQuery.Node|): R|GetFooQuery.Data|
+
+            public final object Adapter : R|apollo/kotlin/Adapter<GetFooQuery.Data>| {
+                public final fun fromJson(element: R|apollo/kotlin/JsonElement|): R|GetFooQuery.Data|
+
+                public final fun toJson(value: R|GetFooQuery.Data|): R|apollo/kotlin/JsonElement|
+
+                public constructor(): R|GetFooQuery.Data.Adapter|
+
+            }
+
+        }
+
+        public final class Node : R|kotlin/Any| {
+            public final val id: R|kotlin/String|
+                public get(): R|kotlin/String|
+
+            public final val productDetails: R|ProductDetails.Data?|
+                public get(): R|ProductDetails.Data?|
+
+            public final val reviewDetails: R|ReviewDetails.Data?|
+                public get(): R|ReviewDetails.Data?|
+
+            public constructor(id: R|kotlin/String|, productDetails: R|ProductDetails.Data?|, reviewDetails: R|ReviewDetails.Data?|): R|GetFooQuery.Node|
+
+            public final object Adapter : R|apollo/kotlin/Adapter<GetFooQuery.Node>| {
+                public final fun fromJson(element: R|apollo/kotlin/JsonElement|): R|GetFooQuery.Node|
+
+                public final fun toJson(value: R|GetFooQuery.Node|): R|apollo/kotlin/JsonElement|
+
+                public constructor(): R|GetFooQuery.Node.Adapter|
+
+            }
+
+        }
+
+        public final companion object Companion : R|kotlin/Any| {
+            public final val compiledDocument: R|apollo/kotlin/CompiledDocument|
+                public get(): R|apollo/kotlin/CompiledDocument|
+
+            public constructor(): R|GetFooQuery.Companion|
+
+        }
+
+    }
+    @R|apollo/kotlin/Fragment|(document = String(
+fragment reviewDetails on Review {
+  text
+}
+)) public final class ReviewDetails : R|kotlin/Any|, R|apollo/kotlin/Executable<ReviewDetails.Data>| {
+        public constructor(): R|ReviewDetails| {
+            super<R|kotlin/Any|>()
+        }
+
+        public final fun compiledDocument(): R|apollo/kotlin/CompiledDocument|
+
+        public final fun variables(): R|kotlin/collections/Map<kotlin/String, kotlin/Any?>|
+
+        public final fun dataAdapter(): R|apollo/kotlin/Adapter<ReviewDetails.Data>|
+
+        public final class Data : R|kotlin/Any| {
+            public final val text: R|kotlin/String|
+                public get(): R|kotlin/String|
+
+            public constructor(text: R|kotlin/String|): R|ReviewDetails.Data|
+
+            public final object Adapter : R|apollo/kotlin/Adapter<ReviewDetails.Data>| {
+                public final fun fromJson(element: R|apollo/kotlin/JsonElement|): R|ReviewDetails.Data|
+
+                public final fun toJson(value: R|ReviewDetails.Data|): R|apollo/kotlin/JsonElement|
+
+                public constructor(): R|ReviewDetails.Data.Adapter|
+
+            }
+
+        }
+
+        public final companion object Companion : R|kotlin/Any| {
+            public final val compiledDocument: R|apollo/kotlin/CompiledDocument|
+                public get(): R|apollo/kotlin/CompiledDocument|
+
+            public constructor(): R|ReviewDetails.Companion|
+
+        }
+
+    }
+    @R|apollo/kotlin/Fragment|(document = String(
+fragment productDetails on Product {
+  price
+}
+)) public final class ProductDetails : R|kotlin/Any|, R|apollo/kotlin/Executable<ProductDetails.Data>| {
+        public constructor(): R|ProductDetails| {
+            super<R|kotlin/Any|>()
+        }
+
+        public final fun compiledDocument(): R|apollo/kotlin/CompiledDocument|
+
+        public final fun variables(): R|kotlin/collections/Map<kotlin/String, kotlin/Any?>|
+
+        public final fun dataAdapter(): R|apollo/kotlin/Adapter<ProductDetails.Data>|
+
+        public final class Data : R|kotlin/Any| {
+            public final val price: R|kotlin/Double|
+                public get(): R|kotlin/Double|
+
+            public constructor(price: R|kotlin/Double|): R|ProductDetails.Data|
+
+            public final object Adapter : R|apollo/kotlin/Adapter<ProductDetails.Data>| {
+                public final fun fromJson(element: R|apollo/kotlin/JsonElement|): R|ProductDetails.Data|
+
+                public final fun toJson(value: R|ProductDetails.Data|): R|apollo/kotlin/JsonElement|
+
+                public constructor(): R|ProductDetails.Data.Adapter|
+
+            }
+
+        }
+
+        public final companion object Companion : R|kotlin/Any| {
+            public final val compiledDocument: R|apollo/kotlin/CompiledDocument|
+                public get(): R|apollo/kotlin/CompiledDocument|
+
+            public constructor(): R|ProductDetails.Companion|
+
+        }
+
+    }
+    public final fun box(): R|kotlin/String| {
+        lval data: R|GetFooQuery.Data| = Q|GetFooQuery.Data.Adapter|.R|/GetFooQuery.Data.Adapter.fromJson|(R|kotlin/collections/mapOf|<R|kotlin/String|, R|kotlin/collections/Map<kotlin/String, it(kotlin/Comparable<*> & java/io/Serializable)>|>(String(node).R|kotlin/to|<R|kotlin/String|, R|kotlin/collections/Map<kotlin/String, it(kotlin/Comparable<*> & java/io/Serializable)>|>(R|kotlin/collections/mapOf|<R|kotlin/String|, R|it(kotlin/Comparable<*> & java/io/Serializable)|>(vararg(String(id).R|kotlin/to|<R|kotlin/String|, R|kotlin/String|>(String(42)), String(__productDetails).R|kotlin/to|<R|kotlin/String|, R|kotlin/String|>(String(Product)), String(price).R|kotlin/to|<R|kotlin/String|, R|kotlin/Double|>(Double(42.0)))))))
+        R|kotlin/check|(==(R|<local>/data|.R|/GetFooQuery.Data.node|.R|/GetFooQuery.Node.productDetails|?.{ $subj$.R|/ProductDetails.Data.price| }, Double(42.0)))
+        R|kotlin/check|(==(R|<local>/data|.R|/GetFooQuery.Data.node|.R|/GetFooQuery.Node.id|, String(42)))
+        R|kotlin/check|(==(R|<local>/data|.R|/GetFooQuery.Data.node|.R|/GetFooQuery.Node.reviewDetails|, Null(null)))
+        ^box String(OK)
+    }

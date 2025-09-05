@@ -1,0 +1,81 @@
+FILE: Point.kt
+    package lib
+
+    public final class Point : R|kotlin/Any| {
+        public constructor(x: R|kotlin/Double|, y: R|kotlin/Double|): R|lib/Point| {
+            super<R|kotlin/Any|>()
+        }
+
+        public final val x: R|kotlin/Double| = R|<local>/x|
+            public get(): R|kotlin/Double|
+
+        public final val y: R|kotlin/Double| = R|<local>/y|
+            public get(): R|kotlin/Double|
+
+    }
+    public final object PointAdapter : R|apollo/kotlin/Adapter<lib/Point>| {
+        private constructor(): R|lib/PointAdapter| {
+            super<R|kotlin/Any|>()
+        }
+
+        public open override fun fromJson(element: R|{apollo/kotlin/JsonElement=} kotlin/Any?|): R|lib/Point| {
+            R|apollo/kotlin/assertExpectedType|<R|kotlin/collections/Map<*, *>|>(R|<local>/element|)
+            ^fromJson R|lib/Point.Point|((R|<local>/element|.R|kotlin/collections/get|<R|kotlin/Any?|, R|kotlin/Any?|>(String(x)) as R|kotlin/Double|), (R|<local>/element|.R|kotlin/collections/get|<R|kotlin/Any?|, R|kotlin/Any?|>(String(y)) as R|kotlin/Double|))
+        }
+
+        public open override fun toJson(value: R|lib/Point|): R|{apollo/kotlin/JsonElement=} kotlin/Any?| {
+            ^toJson R|kotlin/collections/mapOf|<R|kotlin/String|, R|kotlin/Double|>(vararg(String(x).R|kotlin/to|<R|kotlin/String|, R|kotlin/Double|>(R|<local>/value|.R|lib/Point.x|), String(y).R|kotlin/to|<R|kotlin/String|, R|kotlin/Double|>(R|<local>/value|.R|lib/Point.y|)))
+        }
+
+    }
+FILE: box.kt
+    @R|apollo/kotlin/Query|(document = String({point})) public final class PointQuery : R|kotlin/Any|, R|apollo/kotlin/Executable<PointQuery.Data>| {
+        public constructor(): R|PointQuery| {
+            super<R|kotlin/Any|>()
+        }
+
+        public final fun compiledDocument(): R|apollo/kotlin/CompiledDocument|
+
+        public final fun variables(): R|kotlin/collections/Map<kotlin/String, kotlin/Any?>|
+
+        public final fun dataAdapter(): R|apollo/kotlin/Adapter<PointQuery.Data>|
+
+        public final class Data : R|kotlin/Any| {
+            public final val point: R|lib/Point|
+                public get(): R|lib/Point|
+
+            public constructor(point: R|lib/Point|): R|PointQuery.Data|
+
+            public final object Adapter : R|apollo/kotlin/Adapter<PointQuery.Data>| {
+                public final fun fromJson(element: R|apollo/kotlin/JsonElement|): R|PointQuery.Data|
+
+                public final fun toJson(value: R|PointQuery.Data|): R|apollo/kotlin/JsonElement|
+
+                public constructor(): R|PointQuery.Data.Adapter|
+
+            }
+
+        }
+
+        public final companion object Companion : R|kotlin/Any| {
+            public final val compiledDocument: R|apollo/kotlin/CompiledDocument|
+                public get(): R|apollo/kotlin/CompiledDocument|
+
+            public constructor(): R|PointQuery.Companion|
+
+        }
+
+    }
+    public final fun box(): R|kotlin/String| {
+        lval adapter: R|PointQuery.Data.Adapter| = Q|PointQuery.Data.Adapter|
+        lval data: R|PointQuery.Data| = R|<local>/adapter|.R|/PointQuery.Data.Adapter.fromJson|(R|kotlin/collections/mapOf|<R|kotlin/String|, R|kotlin/collections/Map<kotlin/String, kotlin/Double>|>(String(point).R|kotlin/to|<R|kotlin/String|, R|kotlin/collections/Map<kotlin/String, kotlin/Double>|>(R|kotlin/collections/mapOf|<R|kotlin/String|, R|kotlin/Double|>(vararg(String(x).R|kotlin/to|<R|kotlin/String|, R|kotlin/Double|>(Double(1.0)), String(y).R|kotlin/to|<R|kotlin/String|, R|kotlin/Double|>(Double(2.0)))))))
+        R|kotlin/check|(==(R|<local>/data|.R|/PointQuery.Data.point|.R|lib/Point.x|, Double(1.0)))
+        R|kotlin/check|(==(R|<local>/data|.R|/PointQuery.Data.point|.R|lib/Point.y|, Double(2.0)))
+        lval map: R|apollo/kotlin/JsonElement| = R|<local>/adapter|.R|/PointQuery.Data.Adapter.toJson|(R|<local>/data|)
+        (R|<local>/map| as R|kotlin/collections/Map<kotlin/String, kotlin/Any?>|)
+        lval point: R|kotlin/Any?| = R|<local>/map|.R|SubstitutionOverride<kotlin/collections/Map.get: R|kotlin/Any?|>|(String(point))
+        (R|<local>/point| as R|kotlin/collections/Map<kotlin/String, kotlin/Any?>|)
+        R|kotlin/check|(==(R|<local>/point|.R|SubstitutionOverride<kotlin/collections/Map.get: R|kotlin/Any?|>|(String(x)), Double(1.0)))
+        R|kotlin/check|(==(R|<local>/point|.R|SubstitutionOverride<kotlin/collections/Map.get: R|kotlin/Any?|>|(String(y)), Double(2.0)))
+        ^box String(OK)
+    }

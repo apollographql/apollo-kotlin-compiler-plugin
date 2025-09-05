@@ -1,0 +1,66 @@
+FILE: nested-field.kt
+    @R|apollo/kotlin/Query|(document = String(
+{
+  foo: object {
+    nested
+  }
+}
+)) public final class GetFooQuery : R|kotlin/Any|, R|apollo/kotlin/Executable<GetFooQuery.Data>| {
+        public constructor(): R|GetFooQuery| {
+            super<R|kotlin/Any|>()
+        }
+
+        public final fun compiledDocument(): R|apollo/kotlin/CompiledDocument|
+
+        public final fun variables(): R|kotlin/collections/Map<kotlin/String, kotlin/Any?>|
+
+        public final fun dataAdapter(): R|apollo/kotlin/Adapter<GetFooQuery.Data>|
+
+        public final class Data : R|kotlin/Any| {
+            public final val foo: R|GetFooQuery.Foo?|
+                public get(): R|GetFooQuery.Foo?|
+
+            public constructor(foo: R|GetFooQuery.Foo?|): R|GetFooQuery.Data|
+
+            public final object Adapter : R|apollo/kotlin/Adapter<GetFooQuery.Data>| {
+                public final fun fromJson(element: R|apollo/kotlin/JsonElement|): R|GetFooQuery.Data|
+
+                public final fun toJson(value: R|GetFooQuery.Data|): R|apollo/kotlin/JsonElement|
+
+                public constructor(): R|GetFooQuery.Data.Adapter|
+
+            }
+
+        }
+
+        public final class Foo : R|kotlin/Any| {
+            public final val nested: R|kotlin/Int?|
+                public get(): R|kotlin/Int?|
+
+            public constructor(nested: R|kotlin/Int?|): R|GetFooQuery.Foo|
+
+            public final object Adapter : R|apollo/kotlin/Adapter<GetFooQuery.Foo>| {
+                public final fun fromJson(element: R|apollo/kotlin/JsonElement|): R|GetFooQuery.Foo|
+
+                public final fun toJson(value: R|GetFooQuery.Foo|): R|apollo/kotlin/JsonElement|
+
+                public constructor(): R|GetFooQuery.Foo.Adapter|
+
+            }
+
+        }
+
+        public final companion object Companion : R|kotlin/Any| {
+            public final val compiledDocument: R|apollo/kotlin/CompiledDocument|
+                public get(): R|apollo/kotlin/CompiledDocument|
+
+            public constructor(): R|GetFooQuery.Companion|
+
+        }
+
+    }
+    public final fun box(): R|kotlin/String| {
+        lval foo: R|GetFooQuery.Foo| = Q|GetFooQuery|.R|/GetFooQuery.Foo|(Int(4))
+        Q|GetFooQuery|.R|/GetFooQuery.Data|(R|<local>/foo|)
+        ^box String(OK)
+    }

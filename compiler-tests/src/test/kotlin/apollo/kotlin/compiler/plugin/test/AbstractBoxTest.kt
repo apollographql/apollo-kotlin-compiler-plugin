@@ -1,0 +1,31 @@
+package apollo.kotlin.compiler.plugin.test
+
+import apollo.kotlin.compiler.plugin.test.configuration.configurePlugin
+import org.jetbrains.kotlin.config.JvmTarget
+import org.jetbrains.kotlin.test.TestMetadata
+import org.jetbrains.kotlin.test.builders.TestConfigurationBuilder
+import org.jetbrains.kotlin.test.directives.CodegenTestDirectives.IGNORE_DEXING
+import org.jetbrains.kotlin.test.directives.ConfigurationDirectives.WITH_STDLIB
+import org.jetbrains.kotlin.test.directives.JvmEnvironmentConfigurationDirectives.FULL_JDK
+import org.jetbrains.kotlin.test.directives.JvmEnvironmentConfigurationDirectives.JVM_TARGET
+import org.jetbrains.kotlin.test.runners.codegen.AbstractFirLightTreeBlackBoxCodegenTest
+
+
+@TestMetadata("compiler-tests/src/test/data/box")
+@Suppress("Unused")
+open class AbstractBoxTest : AbstractFirLightTreeBlackBoxCodegenTest() {
+  override fun configure(builder: TestConfigurationBuilder) {
+    super.configure(builder)
+
+    with(builder) {
+      configurePlugin()
+
+      defaultDirectives {
+        +FULL_JDK
+        +WITH_STDLIB
+        +IGNORE_DEXING
+        JVM_TARGET.with(JvmTarget.JVM_17)
+      }
+    }
+  }
+}
