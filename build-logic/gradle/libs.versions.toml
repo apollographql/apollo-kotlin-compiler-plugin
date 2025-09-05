@@ -1,5 +1,5 @@
 [versions]
-compat-patrouille = "0.0.0"
+compat-patrouille = "0.0.2"
 gratatouille = "0.1.1-SNAPSHOT-cc0251b8b2f1a34608de3c3542056ebd2689ec89"
 kgp = "2.2.20-RC"
 ksp = "2.2.20-RC-2.0.2"
