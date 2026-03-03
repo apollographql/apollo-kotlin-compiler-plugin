@@ -23,7 +23,7 @@ kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test" }
 kctf-gradle-plugin = { module = "com.gradleup.kctf:kctf-gradle-plugin", version.ref = "kctf" }
 kctf-runtime = { module = "com.gradleup.kctf:kctf-runtime", version.ref = "kctf" }
 ksp = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
-librarian = "com.gradleup.librarian:com.gradleup.librarian.gradle.plugin:0.1.1-SNAPSHOT-44a36034d83f8ba9c9177653f29df3dea933fc3f"
+librarian = "com.gradleup.librarian:com.gradleup.librarian.gradle.plugin:0.2.1"
 okio = { group = "com.squareup.okio", name = "okio", version.ref = "okio" }
 cast = "net.mbonnin.cast:cast:0.0.1"
 
