@@ -1,6 +1,6 @@
 [versions]
 compat-patrouille = "0.0.0"
-gratatouille = "0.1.2"
+gratatouille = "0.2.3"
 gratatouille-runtime = "0.1.2"
 kgp = "2.2.20-RC"
 ksp = "2.2.20-RC-2.0.2"
