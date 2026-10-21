@@ -13,8 +13,8 @@ apollo = "5.0.0-alpha.2"
 apollo-ast = { module = "com.apollographql.apollo:apollo-ast", version.ref = "apollo" }
 apollo-api = { module = "com.apollographql.apollo:apollo-api", version.ref = "apollo" }
 compat-patrouille = { module = "com.gradleup.compat.patrouille:com.gradleup.compat.patrouille.gradle.plugin", version.ref = "compat-patrouille" }
-coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2"
-coroutines-test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.2"
+coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0"
+coroutines-test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.11.0"
 gradle-api = "dev.gradleplugins:gradle-api:8.11.1"
 gratatouille = { module = "com.gradleup.gratatouille:gratatouille-gradle-plugin", version.ref = "gratatouille" }
 gratatouille-tasks-runtime = { module = "com.gradleup.gratatouille:gratatouille-tasks-runtime", version.ref = "gratatouille-runtime" }
